@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
+import 'package:whatsapp_clone/view/chat_page/bottom_chat_bar.dart';
 import 'package:whatsapp_clone/view/chat_page/chat_container.dart';
 
 import 'package:whatsapp_clone/view/contants.dart';
@@ -19,7 +20,7 @@ class ChatPage extends StatelessWidget {
           ),
         ),
         child: Stack(
-          clipBehavior: Clip.none,
+          clipBehavior: Clip.antiAliasWithSaveLayer,
           children: [
             ListView.builder(
               itemCount: 10,
@@ -28,12 +29,9 @@ class ChatPage extends StatelessWidget {
                     text: 'fdsklfjkldsfkjdsjfkldsk', receiver: true);
               },
             ),
-            Row(
-              children: <Widget>[
-                Container(
-                  width: MediaQuery.of(context).size.width * .75,
-                ),
-              ],
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: BottomChatBar(),
             )
           ],
         ),
@@ -55,7 +53,7 @@ class ChatAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: lightGreen,
       automaticallyImplyLeading: false,
       leading: Row(
-        mainAxisSize: MainAxisSize.min, // Prevents taking full width
+        mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
             icon: const Icon(
