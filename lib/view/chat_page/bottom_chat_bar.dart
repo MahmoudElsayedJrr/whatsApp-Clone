@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/view/chat_page/sheet_bottom.dart';
 import 'package:whatsapp_clone/view/contants.dart';
 
 class BottomChatBar extends StatelessWidget {
@@ -29,8 +30,7 @@ class BottomChatBar extends StatelessWidget {
                 child: Row(
                   children: [
                     IconButton(
-                      icon:
-                          Icon(Icons.emoji_emotions_outlined, color: darkGreen),
+                      icon: Icon(Icons.camera_alt, color: darkGreen),
                       onPressed: () {},
                     ),
                     Expanded(
@@ -48,10 +48,20 @@ class BottomChatBar extends StatelessWidget {
                     ),
                     IconButton(
                       icon: Icon(Icons.attach_file, color: darkGreen),
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                          isDismissible: true,
+                          useSafeArea: true,
+                          backgroundColor: Colors.transparent,
+                          context: context,
+                          builder: (context) {
+                            return sheetBottom();
+                          },
+                        );
+                      },
                     ),
                     IconButton(
-                      icon: Icon(Icons.camera_alt, color: darkGreen),
+                      icon: Icon(Icons.mic, color: darkGreen),
                       onPressed: () {},
                     ),
                   ],
@@ -64,7 +74,7 @@ class BottomChatBar extends StatelessWidget {
                 child: CircleAvatar(
                   backgroundColor: darkGreen,
                   child: Icon(
-                    Icons.mic,
+                    Icons.send_outlined,
                     color: Colors.white,
                   ),
                 ),
@@ -76,6 +86,8 @@ class BottomChatBar extends StatelessWidget {
     );
   }
 }
+
+
 
 
 /*TextFormField(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:whatsapp_clone/view/chat_page/bottom_chat_bar.dart';
 import 'package:whatsapp_clone/view/chat_page/chat_container.dart';
 
@@ -20,7 +19,7 @@ class ChatPage extends StatelessWidget {
           ),
         ),
         child: Stack(
-          clipBehavior: Clip.antiAliasWithSaveLayer,
+          clipBehavior: Clip.none,
           children: [
             ListView.builder(
               itemCount: 10,
