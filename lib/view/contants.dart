@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color darkGreen = Color(0xFF128C7E); // WhatsApp Dark Green
+const Color darkGreen = Color(0xFF005c53); // WhatsApp Dark Green
 const Color lightGreen = Color(0xFF075E54); // WhatsApp Light Green
 const Color backgroundGreen = Color(0xFFDCE8C4); // WhatsApp Background Green
 const Color textGreen =

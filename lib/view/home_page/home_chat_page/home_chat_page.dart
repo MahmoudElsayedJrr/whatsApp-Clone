@@ -3,6 +3,7 @@ import 'package:whatsapp_clone/view/chat_page/chat_page.dart';
 import 'package:whatsapp_clone/view/contants.dart';
 
 import 'package:whatsapp_clone/view/home_page/home_chat_page/custom_list_tile.dart';
+import 'package:whatsapp_clone/view/new_chat/new_chat_Page.dart';
 
 class HomeChatPage extends StatelessWidget {
   const HomeChatPage({super.key});
@@ -11,7 +12,10 @@ class HomeChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => NewChat()));
+        },
         child: Icon(Icons.chat, color: Colors.white),
         backgroundColor: darkGreen,
         shape: CircleBorder(),
