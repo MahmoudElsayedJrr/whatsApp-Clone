@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/view/contants.dart';
 import 'package:whatsapp_clone/view/new_chat/SelectedContact.dart';
-import 'package:whatsapp_clone/view/new_chat/new_chat_Page.dart';
 import 'package:whatsapp_clone/view/new_chat/selectedAndUnselectedContactListTile.dart';
 
 class NewAddGroupPage extends StatefulWidget {
@@ -37,7 +36,7 @@ class _NewAddGroupPageState extends State<NewAddGroupPage> {
                     bottomLeft: Radius.circular(8),
                     bottomRight: Radius.circular(8)),
               ),
-              child: Container(
+              child: SizedBox(
                 height: 80,
                 width: double.infinity,
                 child: ListView.builder(

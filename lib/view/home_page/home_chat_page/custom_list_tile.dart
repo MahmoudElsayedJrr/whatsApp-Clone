@@ -17,9 +17,9 @@ class cutomListTileForPerson extends StatelessWidget {
       onTap: ontap,
       child: ListTile(
         leading: CircleAvatar(
-          child: SvgPicture.asset('assets/person-non.svg', width: 40),
           backgroundColor: const Color.fromARGB(255, 110, 138, 161),
           radius: 30,
+          child: SvgPicture.asset('assets/person-non.svg', width: 40),
         ),
         title: Text(name,
             maxLines: 1,

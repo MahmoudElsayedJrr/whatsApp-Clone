@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:whatsapp_clone/view/new_chat/NewAddGroupPage.dart';
 
 import 'package:whatsapp_clone/view/new_chat/new_chat_appbar.dart';

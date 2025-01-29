@@ -16,9 +16,9 @@ class HomeChatPage extends StatelessWidget {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => NewChat()));
         },
-        child: Icon(Icons.chat, color: Colors.white),
         backgroundColor: darkGreen,
         shape: CircleBorder(),
+        child: Icon(Icons.chat, color: Colors.white),
       ),
       body: ListView.builder(
         padding: EdgeInsets.symmetric(vertical: 16),
