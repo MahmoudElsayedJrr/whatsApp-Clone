@@ -39,6 +39,8 @@ class ChatContainer extends StatelessWidget {
                 children: [
                   Text(DateFormat("hh:mm a").format(DateTime.now()),
                       style: TextStyle(color: Colors.grey, fontSize: 11)),
+                  SizedBox(width: 2),
+                  Icon(Icons.check, color: Colors.grey, size: 13),
                 ],
               ),
             ],

@@ -1,11 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/view/chat_page/bottom_chat_bar.dart';
 import 'package:whatsapp_clone/view/chat_page/chat_container.dart';
-
 import 'package:whatsapp_clone/view/contants.dart';
+import 'package:socket_io_client/socket_io_client.dart' as io;
 
-class ChatPage extends StatelessWidget {
+class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
+
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
+  @override
+  void initState() {
+    super.initState();
+    connectToServer();
+  }
+
+  void connectToServer() {
+    final socket = io.io('http://192.168.1.10:3000', <String, dynamic>{
+      'transports': ['websocket'],
+      'autoConnect': false,
+    });
+    socket.connect();
+    socket.emit("/testevent", "Hello from Flutter");
+    socket.onConnect((data) => print('Conected'));
+  }
 
   @override
   Widget build(BuildContext context) {

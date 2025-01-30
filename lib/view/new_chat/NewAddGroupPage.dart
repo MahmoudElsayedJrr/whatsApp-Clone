@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:whatsapp_clone/model/Cubits/cubit/selected_cubits_cubit.dart';
 import 'package:whatsapp_clone/view/contants.dart';
 import 'package:whatsapp_clone/view/new_chat/SelectedContact.dart';
 import 'package:whatsapp_clone/view/new_chat/selectedAndUnselectedContactListTile.dart';
@@ -10,12 +12,14 @@ class NewAddGroupPage extends StatefulWidget {
   State<NewAddGroupPage> createState() => _NewAddGroupPageState();
 }
 
-List<selectedAndUnselectedContactListTile> groups = [];
-
 class _NewAddGroupPageState extends State<NewAddGroupPage> {
+  List<selectedAndUnselectedContactListTile> groups = [];
+  late SelectedCubitsCubit cubit;
+
   @override
   void initState() {
     super.initState();
+    cubit = BlocProvider.of<SelectedCubitsCubit>(context);
     groups.clear();
     print(groups.length);
   }
@@ -52,6 +56,7 @@ class _NewAddGroupPageState extends State<NewAddGroupPage> {
                         ontap: () {
                           setState(() {
                             SelectContacts[index].isSelected = false;
+
                             groups.removeAt(index);
                             print(groups);
                             print(SelectContacts[index].isSelected);
@@ -73,6 +78,9 @@ class _NewAddGroupPageState extends State<NewAddGroupPage> {
                   if (!SelectContacts[index].isSelected) {
                     setState(() {
                       SelectContacts[index].isSelected = true;
+                      context
+                          .read<SelectedCubitsCubit>()
+                          .toggleSelection(SelectContacts[index].name);
                       groups.add(SelectContacts[index]);
                       print(groups.length);
                       print(SelectContacts[index].isSelected);

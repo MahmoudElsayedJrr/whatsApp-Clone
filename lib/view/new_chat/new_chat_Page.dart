@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/view/new_chat/NewAddGroupPage.dart';
-
 import 'package:whatsapp_clone/view/new_chat/new_chat_appbar.dart';
 import 'package:whatsapp_clone/view/new_chat/selectedAndUnselectedContactListTile.dart';
 
